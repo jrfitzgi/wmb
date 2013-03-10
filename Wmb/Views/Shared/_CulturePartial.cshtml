@@ -1,0 +1,19 @@
+﻿@*This view allows the user to select their language and culture*@
+@using System.Globalization;
+
+<form id="SelectLanguage" method="post" action="~/home/culture?redirectUrl=@Request.Url.ToString()">
+    @{
+        List<CultureInfo> cultureList = new List<CultureInfo>();
+        cultureList.Add(new CultureInfo("en-us"));
+        cultureList.Add(new CultureInfo("fr-ca"));
+        cultureList.Add(new CultureInfo("fr-fr"));
+        cultureList.Add(new CultureInfo("es-es"));
+        ViewData["CultureList"] = new SelectList(cultureList, "Name", "Name", CultureInfo.CurrentUICulture.Name);
+        @Html.DropDownList("CultureList", null, new {@onchange="submit()"} );
+    }
+</form>
+@*<p>
+    UICulture: @this.UICulture<br />
+    Culture: @this.Culture;<br />
+    Session: @this.Session["culture"]
+</p>*@

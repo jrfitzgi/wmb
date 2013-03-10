@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = @Resources.LocalizedText.About;
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<p>This page was visited @ViewBag.PageVisits times!</p>
+
+
+<aside>
+    <h3>Aside Title</h3>
+    <p>
+        Use this area to provide additional information.
+    </p>
+    <ul>
+        <li>@Html.ActionLink(@Resources.LocalizedText.Home, "Index", "Home")</li>
+        <li>@Html.ActionLink(@Resources.LocalizedText.About, "About", "Home")</li>
+        <li>@Html.ActionLink(@Resources.LocalizedText.Contact, "Contact", "Home")</li>
+    </ul>
+</aside>

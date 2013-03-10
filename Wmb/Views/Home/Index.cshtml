@@ -1,0 +1,19 @@
+﻿@using Wmb.Views;
+
+@{
+    ViewBag.Title = @Resources.LocalizedText.Home;
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                @Resources.LocalizedText.Welcome
+            </p>
+        </div>
+    </section>
+}
+<h5>This page was visited @ViewBag.PageVisits times!</h5>
